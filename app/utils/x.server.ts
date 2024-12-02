@@ -14,7 +14,7 @@ export async function getUserData(username: string) {
   );
 
   if (response.data.errors) {
-    return { error: "User not found or API error" };
+    throw new Error("User not found or API error");
   }
 
   return response.data.data;
