@@ -13,9 +13,15 @@ export async function action({ request }: { request: Request }) {
   const formData = await request.formData();
   const username = formData.get("username") as string;
 
-  const userData = await getUserData(username);
+  if (!username) return { error: "Username is required" };
 
-  return userData;
+  try {
+    const userData = await getUserData(username);
+
+    return userData;
+  } catch (error: any) {
+    return error.message;
+  }
 }
 
 export default function Index() {
