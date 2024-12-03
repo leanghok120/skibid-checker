@@ -6,9 +6,9 @@ export async function getUserData(username: string) {
   const response = await axios.get(
     `${endpoint}/users/by/username/${username}`,
     {
-      params: { "user.fields": "description,profile_image_url" },
+      params: { "user.fields": "description,profile_image_url,public_metrics" },
       headers: {
-        Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
       },
     }
   );

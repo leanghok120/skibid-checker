@@ -1,9 +1,11 @@
-import { getUserData } from "~/utils/x.server";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { analyzeUser } from "~/utils/analyzeUser";
+import { getUserData } from "~/utils/getUserData";
 
 export async function loader({ params }) {
   const userData = await getUserData(params.username);
+  const analysis = await analyzeUser(userData);
   return json({ userData });
 }
 
