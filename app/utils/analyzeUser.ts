@@ -12,7 +12,7 @@ export async function analyzeUser(userData: any) {
 - following: ${userData.followingCount}
 - tweet count: ${userData.tweetsCount}
 
-Now, talk about how "skibidi" the user is (whatever that means). Keep is casual, friendly, funny, short, relatable and no need to think too much about the stats, or numbers. just make sure it fun! do NOT assume anything about the user, make sure it's related to their activites and maybe roast them a bit, keep it short! respond in lower case. Also no need to mention the account stats! Make sure it's clear how SKIBIDI they are... if they're not then say  they're not!
+Now, talk about how "skibidi" the user is (whatever that means). Keep it casual, friendly, funny, short, relatable and no need to think too much about the stats, or numbers. just make sure it fun! do NOT assume anything about the user, make sure it's related to their activites and maybe roast them a bit, keep it short! respond in lower case. Also no need to mention the account stats! Make sure it's clear how SKIBIDI they are... if they're not then say  they're not! Keep it short but not too short. Instead of "they" respond with "you"
 `;
 
     const result = await model.generateContent(prompt);
