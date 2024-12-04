@@ -6,6 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import Footer from "./components/Footer";
 
 import "./tailwind.css";
 
@@ -41,5 +42,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div className="flex flex-col h-screen items-center justify-center">
+      <Outlet />
+      <Footer />
+    </div>
+  );
 }

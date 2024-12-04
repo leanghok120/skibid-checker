@@ -34,7 +34,7 @@ export default function Results() {
   }
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center">
+    <>
       <div
         className="border-gray-900 border-2 p-5 rounded-xl w-full max-w-96 mb-8"
         ref={cardRef}
@@ -59,6 +59,6 @@ export default function Results() {
       >
         Save image
       </button>
-    </div>
+    </>
   );
 }

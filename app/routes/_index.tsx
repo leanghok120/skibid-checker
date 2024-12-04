@@ -19,9 +19,8 @@ export async function action({ request }: { request: Request }) {
 
 export default function Index() {
   return (
-    <div className="flex flex-col h-screen items-center justify-center">
+    <>
       <h1 className="text-4xl font-black mb-10">Skibidi Checker</h1>
-
       <Form
         method="post"
         className="border-gray-900 border-2 p-5 rounded-xl w-full max-w-96 flex flex-col items-center"
@@ -37,6 +36,6 @@ export default function Index() {
           Submit
         </button>
       </Form>
-    </div>
+    </>
   );
 }
