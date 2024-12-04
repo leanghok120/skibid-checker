@@ -4,7 +4,7 @@ import { Form, redirect } from "@remix-run/react";
 export const meta: MetaFunction = () => {
   return [
     { title: "Skbidi Checker" },
-    { name: "description", content: "Welcome to Remix!" },
+    { name: "description", content: "Check how skibidi you are!" },
   ];
 };
 

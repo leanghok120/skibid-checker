@@ -5,6 +5,13 @@ import { useRef } from "react";
 import { analyzeUser } from "~/utils/analyzeUser";
 import { getUserData } from "~/utils/getUserData";
 
+export const meta = () => {
+  return [
+    { title: "Skbidi Checker" },
+    { name: "description", content: "Check how skibidi you are!" },
+  ];
+};
+
 export async function loader({ params }) {
   const userData = await getUserData(params.username);
   const analysis = await analyzeUser(userData);
