@@ -8,17 +8,17 @@ export async function analyzeUser(userData: any) {
     const prompt = `take a look at this twittter profile:
 - username: ${userData.username}
 - description: ${userData.description || "no description"}
-- followers: ${userData.public_metrics.followers_count}
-- following: ${userData.public_metrics.following_count}
-- tweet count: ${userData.public_metrics.tweet_count}
+- followers: ${userData.followersCount}
+- following: ${userData.followingCount}
+- tweet count: ${userData.tweetsCount}
 
-Now, talk about how "skibidi" the user is (whatever that means). Keep is casual, friendly, funny, short, relatable and no need to think too much about the stats, just make sure it's fun! do NOT assume anything about the user, make sure it's related to their activites and maybe roast them a bit, keep it short!
+Now, talk about how "skibidi" the user is (whatever that means). Keep is casual, friendly, funny, short, relatable and no need to think too much about the stats, or numbers. just make sure it fun! do NOT assume anything about the user, make sure it's related to their activites and maybe roast them a bit, keep it short! respond in lower case. Also no need to mention the account stats! Make sure it's clear how SKIBIDI they are... if they're not then say  they're not!
 `;
 
     const result = await model.generateContent(prompt);
     const text = result.response.text();
-    console.log(text);
-    return new Response({ analysis: text });
+
+    return { analysis: text };
   } catch (error) {
     console.log(error);
   }
